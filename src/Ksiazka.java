@@ -6,11 +6,11 @@ public class Ksiazka {
     private String autor;
     private boolean czyWypozyczona;
 
-    public Ksiazka(String tytul) {
+    public Ksiazka(String tytul,String autor) {
         this.tytul = tytul;
+        this.autor=autor;
         czyWypozyczona=false;
     }
-
 
     public boolean czyWypozyczona() {
         return czyWypozyczona;
@@ -56,6 +56,6 @@ public class Ksiazka {
 
     @Override
     public String toString() {
-        return tytul;
+        return "Tytul: "+ tytul+", autor: "+autor;
     }
 }
