@@ -21,12 +21,13 @@ public class Ksiazka {
         if (this == o) return true;
         if (!(o instanceof Ksiazka)) return false;
         Ksiazka ksiazka = (Ksiazka) o;
-        return Objects.equals(tytul, ksiazka.tytul);
+        return Objects.equals(tytul, ksiazka.tytul) &&
+                Objects.equals(autor, ksiazka.autor);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tytul);
+        return Objects.hash(tytul, autor);
     }
 
     public String getTytul() {

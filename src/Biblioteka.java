@@ -11,15 +11,12 @@ public class Biblioteka {
             if (ksiazki.contains(ksiazka)) {
                 if (ksiazka.czyWypozyczona()) {
                     System.out.println("Nie mozna wypozyczyć, książka została już wypożyczona.");
-                    return;
                 } else {
                     ksiazka.setCzyWypozyczona(true);
                     System.out.println("Ksiązka została wypożyczona.");
-                    return;
                 }
             } else {
                 System.out.println("Książki nie ma w bibliotece.");
-                return;
             }
         }
 
