@@ -8,8 +8,7 @@ public class Biblioteka {
     }
 
     public void wypozycz(Ksiazka ksiazka) {
-        for (Ksiazka ksiazka1 : ksiazki) {
-            if (ksiazka.getTytul().equals(ksiazka1.getTytul())) {
+            if (ksiazki.contains(ksiazka)) {
                 if (ksiazka.czyWypozyczona()) {
                     System.out.println("Nie mozna wypozyczyć, książka została już wypożyczona.");
                     return;
@@ -23,13 +22,13 @@ public class Biblioteka {
                 return;
             }
         }
-    }
 
     public void zwrocKsiazke(Ksiazka ksiazka) {
-        ksiazka.setCzyWypozyczona(false);
-        System.out.println("Ksiązka .");
+        if (ksiazki.contains(ksiazka)) {
+            ksiazka.setCzyWypozyczona(false);
+            System.out.println("Ksiązka została zwrocona.");
+        }
     }
-
     public void ksiazkiWBibliotece() {
         for (Ksiazka ksiazka1 : ksiazki) {
             System.out.println(ksiazka1);
