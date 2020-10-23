@@ -9,7 +9,7 @@ public class Biblioteka {
 
     public void wypozycz(Ksiazka ksiazka) {
         for (Ksiazka ksiazka1 : ksiazki) {
-            if (ksiazka.getTytul().contains(ksiazka1.getTytul())) {
+            if (ksiazka.getTytul().equals(ksiazka1.getTytul())) {
                 if (ksiazka.czyWypozyczona()) {
                     System.out.println("Nie mozna wypozyczyć, książka została już wypożyczona.");
                     return;
