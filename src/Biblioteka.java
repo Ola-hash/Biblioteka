@@ -24,8 +24,11 @@ public class Biblioteka {
         if (ksiazki.contains(ksiazka)) {
             ksiazka.setCzyWypozyczona(false);
             System.out.println("Ksiązka została zwrocona.");
+        }else {
+            System.out.println("Podanej książki nie ma w bibiotece.");
         }
     }
+
     public void ksiazkiWBibliotece() {
         for (Ksiazka ksiazka1 : ksiazki) {
             System.out.println(ksiazka1);
