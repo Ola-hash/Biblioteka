@@ -6,9 +6,20 @@ import java.util.Scanner;
 public class Biblioteka {
     ArrayList<Ksiazka> ksiazki;
     String path;
+    String adres;
 
-    public Biblioteka() {
+
+    public Biblioteka(String adres) {
+        this.adres = adres;
         ksiazki = new ArrayList<>();
+    }
+
+    public String dajAdres() {
+        return adres;
+    }
+
+    public String godzinyOtwarcia() {
+        return "Biblioteki są otwarte codzinennie od 9:00 do 17:00";
     }
 
     public void wypozycz(Ksiazka ksiazka) {
@@ -54,7 +65,7 @@ public class Biblioteka {
                     String[] books = array[i].split("-");
                     String autor = books[0];
                     String tytul = books[1];
-                    Ksiazka ksiazka=new Ksiazka(tytul,autor);
+                    Ksiazka ksiazka = new Ksiazka(tytul, autor);
                     dodajKsiazke(ksiazka);
                 }
             }
