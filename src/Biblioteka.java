@@ -4,14 +4,18 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Biblioteka {
-    ArrayList<Ksiazka> ksiazki;
-    String path;
-    String adres;
+    private ArrayList<Ksiazka> ksiazki;
+    private String adres;
+    private String nazwaBiblioteki;
 
 
     public Biblioteka(String adres) {
         this.adres = adres;
         ksiazki = new ArrayList<>();
+    }
+
+    public String dajNazweBiblioteki() {
+        return nazwaBiblioteki;
     }
 
     public String dajAdres() {
@@ -21,6 +25,7 @@ public class Biblioteka {
     public String godzinyOtwarcia() {
         return "Biblioteki są otwarte codzinennie od 9:00 do 17:00";
     }
+
 
     public void wypozycz(Ksiazka ksiazka) {
         if (ksiazki.contains(ksiazka)) {
@@ -54,7 +59,7 @@ public class Biblioteka {
         ksiazki.add(ksiazka);
     }
 
-    public void wczytakKsiazkiZPliku(String path) {
+    public void wczytajKsiazkiZPliku(String path) {
         try {
             File file = new File(path);
             Scanner scanner = new Scanner(file);
@@ -65,8 +70,8 @@ public class Biblioteka {
                     String[] books = array[i].split("-");
                     String autor = books[0];
                     String tytul = books[1];
-                    Ksiazka ksiazka = new Ksiazka(tytul, autor);
-                    dodajKsiazke(ksiazka);
+          //          Ksiazka ksiazka = new Ksiazka(tytul, autor, );
+            //        dodajKsiazke(ksiazka);
                 }
             }
 

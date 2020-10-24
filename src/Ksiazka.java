@@ -4,16 +4,32 @@ import java.util.Objects;
 public class Ksiazka {
     private String tytul;
     private String autor;
+    private String rodzaj;
+    private String opis;
     private boolean czyWypozyczona;
 
-    public Ksiazka(String tytul,String autor) {
+    public Ksiazka(String tytul, String autor, String rodzaj, String opis) {
         this.tytul = tytul;
-        this.autor=autor;
-        czyWypozyczona=false;
+        this.autor = autor;
+        this.rodzaj = rodzaj;
+        this.opis = opis;
+        czyWypozyczona = false;
     }
 
     public boolean czyWypozyczona() {
         return czyWypozyczona;
+    }
+
+    public String dajTytul() {
+        return tytul;
+    }
+
+    public String dajRodzaj() {
+        return rodzaj;
+    }
+
+    public String dajOpis() {
+        return opis;
     }
 
     @Override
@@ -56,6 +72,6 @@ public class Ksiazka {
 
     @Override
     public String toString() {
-        return "Tytul: "+ tytul+", autor: "+autor;
+        return "Tytul: " + tytul + ", autor: " + autor;
     }
 }
