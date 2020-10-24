@@ -70,8 +70,8 @@ public class Biblioteka {
                     String[] books = array[i].split("-");
                     String autor = books[0];
                     String tytul = books[1];
-          //          Ksiazka ksiazka = new Ksiazka(tytul, autor, );
-            //        dodajKsiazke(ksiazka);
+                    //          Ksiazka ksiazka = new Ksiazka(tytul, autor, );
+                    //        dodajKsiazke(ksiazka);
                 }
             }
 
