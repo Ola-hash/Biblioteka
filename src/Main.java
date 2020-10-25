@@ -7,5 +7,6 @@ public class Main {
        biblioteka.wczytajKsiazkiZPliku("file.txt");
        biblioteka.ksiazkiWBibliotece();
 
+
     }
 }
