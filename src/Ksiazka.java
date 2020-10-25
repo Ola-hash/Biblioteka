@@ -8,11 +8,11 @@ public class Ksiazka {
     private String opis;
     private boolean czyWypozyczona;
 
-    public Ksiazka(String tytul, String autor, String rodzaj, String opis) {
-        this.tytul = tytul;
+    public Ksiazka(String autor, String tytul, String opis, String rodzaj) {
         this.autor = autor;
-        this.rodzaj = rodzaj;
+        this.tytul = tytul;
         this.opis = opis;
+        this.rodzaj = rodzaj;
         czyWypozyczona = false;
     }
 
@@ -72,6 +72,6 @@ public class Ksiazka {
 
     @Override
     public String toString() {
-        return "Tytul: " + tytul + ", autor: " + autor;
+        return "Autor: " + autor + ", Tytul: " + tytul + ", Opis: " + opis + ", Rodzaj: " + rodzaj;
     }
 }

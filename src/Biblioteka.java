@@ -9,8 +9,10 @@ public class Biblioteka {
     private String nazwaBiblioteki;
 
 
-    public Biblioteka(String adres) {
+    public Biblioteka(String adres, String nazwaBiblioteki) {
         this.adres = adres;
+        this.nazwaBiblioteki = nazwaBiblioteki;
+
         ksiazki = new ArrayList<>();
     }
 
@@ -59,7 +61,7 @@ public class Biblioteka {
         ksiazki.add(ksiazka);
     }
 
-    public void wczytajKsiazkiZPliku(String path) {
+    public void wczytajKsiazkiZPliku(String path) throws NoElementFoundExeption {
         try {
             File file = new File(path);
             Scanner scanner = new Scanner(file);
@@ -70,15 +72,34 @@ public class Biblioteka {
                     String[] books = array[i].split("-");
                     String autor = books[0];
                     String tytul = books[1];
-                    //          Ksiazka ksiazka = new Ksiazka(tytul, autor, );
-                    //        dodajKsiazke(ksiazka);
+                    String opis = books[2];
+                    String rodzaj = books[3];
+
+                    Ksiazka ksiazka = stworzKsiazke(autor, tytul, opis, rodzaj);
+                    ksiazki.add(ksiazka);
                 }
             }
-
             scanner.close();
         } catch (FileNotFoundException e) {
             System.out.println("Nie ma takiego pliku.");
         }
+    }
+
+    public Ksiazka stworzKsiazke(String autor, String tytul, String opis, String rodzaj) throws NoElementFoundExeption {
+
+        switch (rodzaj) {
+            case "Epopeja":
+                return new Epopeja(autor, tytul, opis, rodzaj);
+            case "Kryminal":
+                return new Kryminal(autor, tytul, opis, rodzaj);
+            case "Ksiazka Fantastyczna":
+                return new KsiazkaFantastyczna(autor, tytul, opis, rodzaj);
+            case "Ksiazka naukowa":
+                return new KsiazkaNaukowa(autor, tytul, opis, rodzaj);
+            default:
+                throw new NoElementFoundExeption("Nie znaleziono rodzaju" + rodzaj);
+        }
+
 
     }
 
