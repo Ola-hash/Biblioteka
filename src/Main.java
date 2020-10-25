@@ -5,7 +5,6 @@ public class Main {
 
        Biblioteka biblioteka=new Biblioteka("as","sdd");
        biblioteka.wczytajKsiazkiZPliku("file.txt");
-       biblioteka.ksiazkiWBibliotece();
 
 
     }

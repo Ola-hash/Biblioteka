@@ -61,7 +61,7 @@ public class Biblioteka {
         ksiazki.add(ksiazka);
     }
 
-    public void wczytajKsiazkiZPliku(String path) throws NoElementFoundExeption {
+    public void wczytajKsiazkiZPliku(String path) {
         try {
             File file = new File(path);
             Scanner scanner = new Scanner(file);
@@ -74,7 +74,6 @@ public class Biblioteka {
                     String tytul = books[1];
                     String opis = books[2];
                     String rodzaj = books[3];
-
                     Ksiazka ksiazka = stworzKsiazke(autor, tytul, opis, rodzaj);
                     ksiazki.add(ksiazka);
                 }
@@ -82,6 +81,8 @@ public class Biblioteka {
             scanner.close();
         } catch (FileNotFoundException e) {
             System.out.println("Nie ma takiego pliku.");
+        }catch (NoElementFoundExeption e){
+            e.getMessage();
         }
     }
 
